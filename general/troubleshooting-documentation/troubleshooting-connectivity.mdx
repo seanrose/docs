@@ -1,0 +1,64 @@
+---
+title: Troubleshooting > Connectivity for MacOS Devices
+---
+
+This document aims to guide End Users to collect information to assist Meter Support in diagnosing and resolving intermittent issues being noticed on the network. There will be two sections one for WIRED clients and one for WIRELESS clients.
+
+## For users on a WIRED connection
+
+At the first sign of what seems like a network issue please open a terminal to run the following ping commands and share the output:
+
+```
+ping -c5 8.8.8.8
+
+ping -c5 google.com
+
+nslookup google.com
+```
+
+Please share the results of speedtest.meter.net and fast.com speed tests if you can connect to them.
+
+<Note>
+The label of the ethernet port your devices are connected to on the floor or wall.
+
+Your current IP address (under Settings > Network > Click on the name of your wired connection). This would be ‘Plugable UD_6950PDH’ in the example below.
+</Note>
+
+Confirm your network service order under Settings > Network > ‘...’ (bottom right of the window) > Set service order - confirm your wired connection is listed first.
+
+<Frame>
+  <img src="https://support.meter.com/hc/article_attachments/25394178869901"/>
+</Frame>
+
+Run the following command and send the file called ‘system.log’ that will appear on your Desktop.
+
+```
+log show --last 15m --info --style syslog > ~/Desktop/system.log
+```
+
+<strong>Other information requests:</strong>
+
+- What was the impact of the service disruption? (ie. was it only certain apps or websites or anything requiring network connectivity?)
+- Did this issue occur right after you plugged your laptop in to try to use the wired connection? Or was the wired connection already actively being used?
+- Did you do anything to restore connectivity or did it resolve itself?
+
+If using an ethernet to USB dongle attached to your monitor - please try plugging the USB dongle directly into your MacBook if possible to see if the issue persists.
+
+## For users on a WIRELESS connection
+
+At the first sign of an issue -
+
+Please run MacOS’s built-in Wi-Fi diagnostic. Instructions [here](https://support.apple.com/guide/mac-help/use-wireless-diagnostics-mchlf4de377f/mac)
+
+Please send the WirelessDiagnostics.tar.gz file that is generated and placed into the /var/tmp directory. (note - this file may be large and need to be sent via a Google Drive link).
+
+Please send a photo of your advanced Wi-Fi menu. Hold the option key and click on the Wi-Fi menu on the top-right-hand side of the screen. This menu will provide additional information like the example below:
+
+<Frame>
+  <img src="https://support.meter.com/hc/article_attachments/25394178873357"/>
+</Frame>
+
+Please also note where you are located on the floor plan. The floor plan can be viewed on the Meter Dashboard under <strong>Access Points</strong> > <strong>Floor Plan</strong>.
+
+- What was the impact of the service disruption? (ie. was it only certain apps or websites or anything requiring network connectivity?)
+- Did you do anything to restore connectivity or did it resolve itself?

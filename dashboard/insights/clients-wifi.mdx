@@ -1,0 +1,52 @@
+---
+title: Clients [Wi-Fi client insights]
+---
+
+## Who can access this feature?
+
+- Partner
+- Company/Network Admins with write and read access
+- Meter Support
+
+## What is the Clients Page?
+
+The client's page offers additional insights into the health and status of a Wi-Fi client. To view the wireless insights of a connected Wi-Fi client, navigate to <strong>Insights > Clients > [Click on the desired Wi-Fi Client]</strong>.
+
+<Frame>
+  <img src="https://support.meter.com/hc/article_attachments/30674335118989"/>
+</Frame>
+
+Here is an example of a Wi-Fi client’s insights page:
+
+<Frame>
+  <img src="https://support.meter.com/hc/article_attachments/31273669490957"/>
+</Frame>
+
+Meter Support will typically reference this page anytime there is troubleshooting being conducted regarding the Wi-Fi. Stats here help paint a picture of the overall Wi-Fi quality a client may be experiencing.
+
+- <strong>Filters</strong> - The insights page presents usage statistics for a client over time (note time filters on the top-right-hand side of the screen). You can also filter for 2.4 GHz, 5 GHz, or specific SSIDs to only see stats from when the client was connected in that manner.
+- <strong>Metadata</strong> - A quick look at client IP and connection info.
+- <strong>Hearbeat/current stats</strong> - Color-coded stats of the last 30 minutes (green indicates a good connection, yellow is fair, red is poor).
+- <strong>Usage</strong> - Total data sent and received by the client.
+- <strong>SNR</strong> - The Signal to Noise ratio of the client (the higher the better).
+- <strong>Data rate</strong> - The rate at which the client device sends and receives data to/from the Access point.
+- <strong>Packet retry ratio</strong> - The percentage of packets that need to be retried.
+- <strong>Channel Utilization</strong> - The percentage of time the Wi-Fi channel was being utillized by the client.
+
+## A Note on the Data Representation
+
+Unfortunately, it is not feasible to send all real-time data to the Dashboard as this would be incredibly resource-intensive. Instead, averages are used depending on your selected time filter. Up to 24 hours, data is represented in 5-minute intervals. The data point will contain the average of the last 5 minutes. After 24 hours the interval increases to 30 minutes. At 30 days, the interval increases to 1 hour. You may notice data appear to change selecting different time windows as averages will change for different intervals.
+
+### Connection Events
+
+Clicking ‘Connection Events’ at the top of the page will reveal all connection events specific to the client:
+
+<Frame>
+  <img src="https://support.meter.com/hc/article_attachments/30674335126029"/>
+</Frame>
+
+If there are any errors listed, simply click on the error message and hover over the tool tip to see more specific information about the error message.
+
+Currently, connection events will show when a client connects to, roams to/from, disassociates, or gains an IP address via DHCP.
+
+If you have any questions about the Network Insights or need further assistance, feel free to contact Meter Support at [support@meter.com](mailto:support@meter.com) or submit a ticket on the Meter Dashboard.

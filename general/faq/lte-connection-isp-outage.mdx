@@ -1,0 +1,45 @@
+---
+title: "How Meter Uses LTE Connection to Maintain Connectivity During ISP Outage"
+---
+
+In today’s connected environments, network uptime is critical for smooth business operations. An unexpected outage can disrupt service for sites relying on a single ISP, causing lost productivity and hampering essential network access. To address this, Meter’s Security Appliance (SA) is equipped with LTE Connection capability, allowing it to automatically switch to a cellular connection during an ISP outage. This feature provides continuity of access for support teams, ensuring they can monitor and troubleshoot issues even when the primary ISP is down.
+
+<Frame>
+  <img src="https://support.meter.com/hc/article_attachments/31663902864269"/>
+</Frame>
+
+### How LTE Connection Failover Works
+
+When an ISP outage occurs, the Security Appliance automatically detects the loss of primary WAN connectivity. Once confirmed, the appliance activates its built-in LTE failover, switching to a cellular connection. This LTE connection is configured to immediately reconnect the appliance to the Meter's back end, enabling remote access for the Meter support team.
+
+<strong>It is important to note that the LTE connection can only be used for the device to connect to the Meter back end. The connection cannot be used for normal network operations in the event of an ISP failure.</strong>
+
+This failover to LTE is a seamless process, designed to keep the Meter support team in touch with the appliance, so they can monitor the device status and diagnose network conditions without disruption. LTE failover provides a reliable bridge until the primary ISP service is restored, ensuring that Meter’s support team has uninterrupted access to troubleshoot, monitor, and work on any issues that may arise during the outage.
+
+## Steps Taken by Meter Support During ISP Outages
+
+Once the failover to LTE occurs, Meter support initiates a set of procedures to ensure the customer is fully informed and the primary ISP issue is addressed as quickly as possible:
+
+1. ### Real-Time Alerts for Security Appliance LTE Failover
+
+Meter Support receives real-time alerts on Security Appliance status changes to LTE via our robust monitoring and reporting systems.
+
+2. ### Notify the Customer of the Outage
+
+Our team opens a ticket with the customer and notifies them of the ISP outage. In the ticket, the support team includes details about the failover to LTE and assures the customer that monitoring and troubleshooting are underway.
+
+3. ### Contact the ISP for Troubleshooting and ETR
+
+In parallel, the support team contacts the ISP to report the outage and begin troubleshooting. They work closely with the ISP’s support team to gather information on the root cause of the disruption and determine the Estimated Time of Restoration (ETR). This collaboration ensures that any ISP-specific issues are promptly identified, and customers can be provided with accurate updates regarding the status of the outage.
+
+4. ### Continuous Monitoring of the Appliance
+
+While the LTE connection keeps the appliance accessible, Meter’s support team continuously monitors its status and network conditions. This active monitoring allows the support team to quickly address any emerging issues and verify that the failover connection remains stable.
+
+5. ### Switching Back to the Primary ISP
+
+Once the ISP service is restored, the Meter Security Appliance automatically switches back to the primary connection. The support team verifies this transition, ensures that primary connectivity is stable, and updates the customer on the successful restoration of ISP service.
+
+## Why LTE Failover Is Essential for Reliability
+
+For businesses relying on uninterrupted access to network monitoring and support, LTE failover on the Security Appliance provides a crucial layer of reliability. It not only ensures that network monitoring remains intact during ISP outages but also facilitates quick and efficient communication between Meter support, the ISP, and the customer, speeding up resolution times.

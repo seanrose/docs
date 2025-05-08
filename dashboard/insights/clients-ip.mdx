@@ -1,0 +1,47 @@
+---
+title: Clients [How to Reserve an IP Address and Renaming Clients]
+---
+
+## Who can access this feature?
+
+- Partner
+- Company/Network Admins with write and read access
+- Meter Support
+
+## What does it mean to reserve an IP Address?
+
+By default, the Meter network uses a service called DHCP (Dynamic Host Configuration Protocol). This allows client devices to connect and automatically be assigned an IP address. It is possible that this IP address can change when the client device disconnects and then reconnects to the network - or when a long enough period has passed and DHCP must ‘renew’ the IP address.
+
+Sometimes certain resources such as internal servers or NAS devices should have a never-changing IP address. This can be accomplished by ‘<strong>Reserving</strong>’ the IP address. This ensures that the DHCP service only allows a single device to use a certain IP address.
+
+## How to reserve an IP Address?
+
+1. Log in at [dashboard.meter.com](https://dashboard.meter.com)
+2. Click on <strong>Insights > Clients</strong>
+3. Click on the name of the Client device you would like to pin
+4. Click the 3 Horizontal Dots on the top-right and then ‘<strong>Reserve IP address</strong>’
+    <Frame>
+      <img src="https://support.meter.com/hc/article_attachments/31273824148109"/>
+    </Frame>
+  - Confirm the MAC address and IP address
+  - [<strong>Optional</strong>] A label can also be assigned to the pinned IP address to rename a client
+    <Frame>
+      <img src="https://support.meter.com/hc/article_attachments/30132984009101"/>
+    </Frame>
+
+### How to modify Reserved IP addresses and Display Names?
+
+Changing the IP assignment or creating an IP reservation with a known MAC address can be done in the 'VLANs' section of the Meter Dashboard.
+
+<Note>Ensure that the IP intended to be used here does not match an IP that is already in use. Search for that IP under Insights > Clients. If the IP is already in use, select a different IP.</Note>
+
+1. Log in at [dashboard.meter.com](https://dashboard.meter.com)
+2. Click on <strong>Network-wide > VLANs</strong>
+3. Click on the VLAN name > <strong>View VLAN</strong> on the right side drawer
+4. Navigate to the <strong>DHCP</strong> tab
+  - Under <strong>Static mappings</strong>, you can see all of the pinned IP addresses and additional info.
+    <Frame>
+        <img src="https://support.meter.com/hc/article_attachments/30132984010637"/>
+    </Frame>
+
+If you have any questions about the Network Insights or need further assistance, feel free to contact Meter Support at [support@meter.com](mailto:support@meter.com) or submit a ticket on the Meter Dashboard.

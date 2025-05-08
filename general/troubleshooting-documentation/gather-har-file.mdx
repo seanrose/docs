@@ -1,0 +1,24 @@
+---
+title: "How to Gather a HAR file from a Browser"
+---
+
+## To generate a HAR file in Chrome
+
+1. Open Chrome and go to the page where the issue is occurring.
+2. Look for the ⋮ button and select More Tools > Developer Tools.
+3. From the panel that appears, select the Network tab. You must keep it open while you reproduce the issue.
+4. Look for a round record button in the upper left corner of the tab, and make sure it is red. If it is grey, click the button once to start recording.
+5. If it isn't, check the <strong>Preserve log box</strong>.
+6. Click the crossed-circle button to clear any existing logs from the network tab.
+7. Reproduce the issue while the network requests are recorded.
+8. Click the download button, <strong>Export HAR</strong>, to download, and save the file to your computer: <strong>Save as HAR with Content</strong>.
+    <Frame>
+      <img src="https://lh3.googleusercontent.com/1ygx8pU9y6yD5_sXoE4IkMkqUZ1e6jSPFtE_J8yaCeHQsWaGo-6kwI134mxHIYT8cVQhyWG8BKxrnFNm4h-7RnsF2_G_WdqqOUwUzoWMpH39-8y3KSWUiAPaFZmlLEOalK_Jjy8nek2W1a5fqPEvwms"/>
+    </Frame>
+9. Upload the HAR file to your ticket with Zendesk Customer Support for further investigation.
+
+## Retrieving console logs in Chrome
+
+1. Open the Main Menu for Chrome.
+2. Navigate to More Tools > Developer Tools.
+3. Open the Console tab and screenshot any errors that appear.

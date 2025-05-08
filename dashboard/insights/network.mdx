@@ -1,0 +1,50 @@
+---
+title: Network
+---
+
+## Who can access this feature?
+
+- Partner
+- Company/Network Admins with write and read access
+- Meter Support
+
+## What are the Network Insights?
+
+This article explains the various components and metrics found on the Meter dashboard’s Network Insights section, which provides a high-level overview of network health and performance. This page displays key details about the status of security appliances, switches, access points, connected clients, WAN quality, and throughput.
+
+<Frame>
+  <img src="https://support.meter.com/hc/article_attachments/31869233154701"/>
+</Frame>
+
+## Dashboard Sections
+
+### Network Status Indicators
+
+- <strong>Security Appliances</strong>: This status shows if the security appliances are operational. An “All online” status means the Meter Security Appliance(s) is functioning and communicating with the network without issues.
+- <strong>Switches</strong>: Indicates the status of switches within the network. “All online” suggests that all switches are functional, facilitating smooth data transfer across the network.
+- <strong>Access Points</strong>: Shows the status of access points responsible for wireless connectivity.
+
+### Connected Clients
+
+- This section provides a real-time graph showing the number of clients (devices) connected to the network at any given time.
+- The graph can help administrators understand the current network load and identify potential issues if there are significant fluctuations in client count.
+
+### WAN0 Quality and WAN1 Quality
+
+- These metrics represent the quality of the WAN connections. Quality is typically measured as a percentage, with 100% representing optimal performance, free from packet loss or latency issues.
+
+### WAN0 Throughput and WAN1 Throughput
+
+- This section measures the data transfer rate on each WAN connection, typically displayed in bps (bits per second), kbps (kilobits per second), or Mbps (megabits per second).
+
+### How to Use the Dashboard
+- <strong>Identify Network Issues</strong> If any security appliance, switch, or access point is offline, the network’s reliability may be affected. For example, an offline access point may impact wireless connectivity in certain areas.
+- <strong>Monitor Client Activity</strong> Use the “Connected Clients” graph to monitor device activity. Sudden changes may indicate network issues or increased demand on the network.
+- <strong>Assess WAN Health</strong> Consistently high WAN quality values (around 100%) indicate stable, high-quality connections to the internet or external networks. Any drop in quality below 90-95% may require investigation.
+- <strong>Track Network Traffic</strong> The throughput graphs for each WAN connection help administrators track data transmission. A spike in throughput may indicate a period of high network activity, which could be expected during file transfers or backups.
+
+### A Note on the Data Representation
+
+Unfortunately, sending all real-time data to the Dashboard is not feasible as this would be incredibly resource-intensive. Instead, averages are used depending on your selected time filter. Up to 24 hours, data is represented in 5-minute intervals. The data point will contain the average of the last 5 minutes. After 24 hours the interval increases to 30 minutes. At 30 days, the interval increases to 1 hour. You may notice data appear to change selecting different time windows as averages will change for different intervals.
+
+If you have any questions about the Network Insights or need further assistance, feel free to contact Meter Support at [support@meter.com](mailto:support@meter.com) or submit a ticket on the Meter Dashboard.

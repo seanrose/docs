@@ -1,0 +1,128 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Meter",
+  "colors": {
+    "primary": "#5361C7",
+    "light": "#ffffff",
+    "dark": "#5462c7"
+  },
+  "fonts": {
+    "body": {
+      "family": "SuisseIntl-Regular",
+      "source": "https://mintlify-assets.b-cdn.net/suisse-intl-400.woff2",
+      "format": "woff2"
+    },
+    "heading": {
+      "family": "SuisseIntl-Bold",
+      "source": "https://mintlify-assets.b-cdn.net/suisse-intl-600.woff2",
+      "format": "woff2"
+    }
+  },
+  "background": {
+    "color": {
+      "light": "#E9EAF0",
+      "dark": "#27283A"
+    }
+  },
+  "favicon": "/favicon.png",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Dashboard",
+        "groups": [
+          {
+            "group": "Insights",
+            "pages": [
+              "dashboard/insights/network",
+              "dashboard/insights/clients-wifi",
+              "dashboard/insights/clients-ip"
+            ]
+          },
+          {
+            "group": "Hardware",
+            "pages": [
+              "dashboard/hardware/access-points",
+              "dashboard/hardware/access-points-bssids",
+              "dashboard/hardware/access-points-clients"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "General",
+        "groups": [
+          {
+            "group": "Troubleshooting Documentation",
+            "pages": [
+              "general/troubleshooting-documentation/troubleshooting-connectivity",
+              "general/troubleshooting-documentation/meter-speed-test",
+              "general/troubleshooting-documentation/gather-har-file"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "general/faq/welcome-meter-support",
+              "general/faq/lte-connection-isp-outage",
+              "general/faq/isp-throughput"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "WiFi",
+        "groups": [
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "wifi/troubleshooting/troubleshooting-collect-system-info",
+              "wifi/troubleshooting/troubleshooting-wifi-speeds-slow",
+              "wifi/troubleshooting/troubleshooting-which-access-point"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "wifi/faq/expected-wifi-speeds",
+              "wifi/faq/connect-to-meter-wifi-network",
+              "wifi/faq/what-is-rssi"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+       "anchors": [
+         {
+           "anchor": "Blog",
+           "href": "https://www.meter.com/blog",
+           "icon": "newspaper"
+         }
+       ]
+     }
+  },
+  "logo": {
+    "light": "/logo/logo.svg",
+    "dark": "/logo/logo.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@meter.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.meter.com/support"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/meter",
+      "linkedin": "https://www.linkedin.com/company/meter-com"
+    }
+  }
+}
