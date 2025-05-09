@@ -1,0 +1,150 @@
+---
+description: "Description of your new file."
+title: "Network Intrusion Detection System (NIDS)"
+sidebarTitle: "Network Intrusion Detection System"
+---
+
+## **Who can access this feature?**
+
+| **Role**                  | View | Edit |
+| ------------------------- | ---- | ---- |
+| Partner                   | ✅    | ✅    |
+| Company Admin             | ✅    | ✅    |
+| Network Admin             | ✅    | ✅    |
+| Network Admin (read-only) | ✅    | ❌    |
+
+## **What is NIDS?**
+
+NIDS stands for Network Intrusion Detection System. NIDS actively monitors network traffic for security threats. NIDS has two modes: **Detect **and **Protect**.
+
+<CardGroup cols={2}>
+  <Card title="Detect" icon="building-magnifying-glass">
+    Detect mode (often called "Intrusion Detection System" in other systems) monitors traffic and logs any events that may be suspicious. From the logs, it provide the ability to manually block specific threats.
+  </Card>
+  <Card title="Protect" icon="shield-check">
+    Protect mode (often called "Intrusion Prevention System" in other systems) does everything in Detect mode and adds automatic blocking of suspicious traffic.
+  </Card>
+</CardGroup>
+
+## Setup
+
+NIDS can be enabled under Firewall \> NIDS \> Config.
+
+![7121.png](/images/7121.png)
+
+This will reveal the configuration pane.
+
+### Detect Settings
+
+![meter - Meter Dashboard from Google Chrome on 2025-05-09 at 06-55AM@2x.png](/images/meter-MeterDashboardfromGoogleChromeon2025-05-09at06-55AM@2x.png)
+
+<Steps>
+  <Step title="Detect | Protect">
+    By default, the toggle switch is set to 'Detect'. This means only IDS runs. Events will be logged but not automatically prevented. Toggle to 'Protect' to enable IPS.
+  </Step>
+  <Step title="VLANs">
+    Select which VLANs should be protected by NIDS.
+  </Step>
+  <Step title="East-West Detection and Prevention">
+    If enabled, NIDS will run on interVLAN traffic as well as traffic from outside of the LAN. 
+
+    For example, if `private` and `security` VLANs are added and east-west is enabled, NIDS will also examine any traffic crossing to the other VLAN. 
+
+    If disabled, all traffic between VLANs is considered safe, and only traffic leaving or entering the Internet is reviewed.
+  </Step>
+</Steps>
+
+### Protect Settings
+
+<Info>
+  If Protect is toggled on, additional options appear.
+</Info>
+
+![meter - Meter Dashboard from Google Chrome on 2025-05-09 at 06-56AM@2x.png](/images/meter-MeterDashboardfromGoogleChromeon2025-05-09at06-56AM@2x.png)
+
+<Steps>
+  <Step title="Protect rule duration" stepNumber={4}>
+    If Protect blocks traffic, an ACL rule will automatically be generated to block this traffic in the future for the set duration. After that time, the rule is removed. If the traffic is blocked again, this rule will once again be created.
+  </Step>
+  <Step title="Global Protect suppression" stepNumber={5}>
+    Internal and external IPs or IP ranges exempt from Protect blocking. Detect will still run and generate events for these IPs, but Protect will never block their traffic.
+  </Step>
+</Steps>
+
+## Categories and Signatures
+
+You can further fine-tune your settings with Categories or Signatures. Categories are groupings of Signatures that you can change your detection or protection settings on. Any setting on a signature will override the category setting. Click on the toggle in the **Mode** column to change the setting.
+
+![NIDS - Firewall - meter - Meter Dashboard from Google Chrome on 2025-05-09 at 06-57AM 2@2x.png](/images/NIDS-Firewall-meter-MeterDashboardfromGoogleChromeon2025-05-09at06-57AM2@2x.png)
+
+![NIDS - Firewall - meter - Meter Dashboard from Google Chrome on 2025-05-09 at 06-59AM 2@2x.png](/images/NIDS-Firewall-meter-MeterDashboardfromGoogleChromeon2025-05-09at06-59AM2@2x.png)
+
+## Suppressions
+
+Use a suppression to pause NIDS from running on certain traffic. This is useful if something is getting falsely flagged as a protected category. A suppression can be configured under Signatures \> actions (...) \> suppressions.
+
+![NIDS - Firewall - meter - Meter Dashboard from Google Chrome on 2025-05-09 at 07-01AM@2x.png](/images/NIDS-Firewall-meter-MeterDashboardfromGoogleChromeon2025-05-09at07-01AM@2x.png)
+
+Here you can choose to suppress Detect or Protect. Add an IP with a subnet in slash notation to add a suppression for a host or range of hosts (e.g. `10.103.0.20/32` or `10.103.0.0/24`). If only events with that IP or range as a destination or source address should be suppressed, choose a direction. Otherwise, both directions will be suppressed.
+
+<Info>
+  Suppressing Detect automatically suppresses Protect. 
+</Info>
+
+Suppressions can later be reviewed or deleted by clicking on the suppression in the 'suppressions' column.
+
+![b8bea0f33578067c536d4568615394e47262348b8c502653d94c89bfcc35a783.png](/images/b8bea0f33578067c536d4568615394e47262348b8c502653d94c89bfcc35a783.png)
+
+## Logs and creating persistent ACL rules from events
+
+The **Detection** tab will display all events. The **Protection** tab will only display events that were blocked.
+
+![ace5d91f14b7161f4504047ba64bd9a86adae31489ed2bc1cd13e3fbe7dd3d08.png](/images/ace5d91f14b7161f4504047ba64bd9a86adae31489ed2bc1cd13e3fbe7dd3d08.png)
+
+Click on a timestamp to see more info on the event. Along with the info displayed in the main tab, more information about the connection is shown. This information can help tune the NIDS configuration as needed.
+
+![cce4cc0ef92d17aa23a7ab21bc289728eb66b4d5793808b4e0feb3f5f5d70af5.png](/images/cce4cc0ef92d17aa23a7ab21bc289728eb66b4d5793808b4e0feb3f5f5d70af5.png)
+
+Also note that at the bottom of each event, there is a 'Create ACL rule' button. Click this button to create a persistent ACL rule to always block this traffic in the future. Edit the rule as needed to include additional IPs and port numbers.
+
+If an ACL rule is created from a NIDS event, it can be found under Firewall \> ACLs.
+
+![](https://support.meter.com/hc/article_attachments/36369542034189)
+
+If an ACL was created via NIDS, it will be marked as such with the icon next to the enabled/disabled column (green check mark). Click the icon to see more information about the NIDS event. At this point, the rule can be moved/edited like a regular ACL rule. Read more about ACL rules [here](https://support.meter.com/hc/en-us/articles/31891924192269-Firewall-ACLs-Rules).
+
+## FAQ
+
+### What exactly does Meter scan?
+
+For unencrypted traffic: The Meter Security Appliance inspects both packet payloads and metadata to detect threats such as malware, command-and-control activity, and known intrusion signatures. This allows for deep packet inspection and signature-based threat detection.
+
+For encrypted traffic (HTTPS, etc.): The Meter Security Appliance cannot decrypt encrypted content. Instead, it analyzes metadata and behavioral patterns (such as timing, frequency, destination, and packet sizes) to identify anomalies and potential threats using traffic analysis.
+
+We maintain your privacy by never breaking encryption. The contents of your encrypted traffic remain completely private and secure, end to end. Meter NIDS never sends packets to the Meter cloud backend.
+
+### Where does this scanning happen?
+
+Scanning occurs locally on the Meter Security Appliance. When a threat is detected, a log is generated indicating the category of the threat as well as any relevant metadata.
+
+### Does Meter support custom rule sets or signatures?
+
+Meter NIDS leverages the Emerging Threats ruleset. We plan to add support for custom rule sets and signatures in the future.
+
+### How much does this cost?
+
+NIDS is included with your Meter subscription as a software upgrade at no additional charge.
+
+### Will enabling NIDS impact my network performance?
+
+Networks with the 1G Meter Security Appliance (mc06): No performance impact.
+
+Networks with the 10G Meter Security Appliance (mc11): Overall throughput from the Security Appliance will be limited to under 5G.
+
+### Can I disable NIDS?
+
+Yes. Navigate to Firewall \> NIDS, click Config, click more actions in the top right (the ellipsis button), then Disable.
+
+<Tip>
+  If you have any questions about NIDS or need further assistance, feel free to contact Meter Support at [support@meter.com](mailto:support@meter.com) or submit a ticket at [meter.com/support](https://meter.com/support).
+</Tip>
