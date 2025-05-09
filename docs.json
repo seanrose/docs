@@ -46,6 +46,12 @@
               "dashboard/hardware/access-points-bssids",
               "dashboard/hardware/access-points-clients"
             ]
+          },
+          {
+            "group": "Firewall",
+            "pages": [
+              "dashboard/firewall/nids"
+            ]
           }
         ]
       },
@@ -91,16 +97,7 @@
           }
         ]
       }
-    ],
-    "global": {
-       "anchors": [
-         {
-           "anchor": "Blog",
-           "href": "https://www.meter.com/blog",
-           "icon": "newspaper"
-         }
-       ]
-     }
+    ]
   },
   "logo": {
     "light": "/logo/logo.svg",
