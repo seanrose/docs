@@ -3,25 +3,25 @@
   "theme": "mint",
   "name": "Meter",
   "colors": {
-    "primary": "#5361C7",
+    "primary": "#5462c7",
     "light": "#ffffff",
-    "dark": "#5462c7"
+    "dark": "#27283A"
   },
   "fonts": {
     "body": {
-      "family": "SuisseIntl-Regular",
-      "source": "https://mintlify-assets.b-cdn.net/suisse-intl-400.woff2",
+      "family": "Inter",
+      "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap",
       "format": "woff2"
     },
     "heading": {
-      "family": "SuisseIntl-Bold",
-      "source": "https://mintlify-assets.b-cdn.net/suisse-intl-600.woff2",
+      "family": "Inter",
+      "source": "https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap",
       "format": "woff2"
     }
   },
   "background": {
     "color": {
-      "light": "#E9EAF0",
+      "light": "#ffffff",
       "dark": "#27283A"
     }
   },
